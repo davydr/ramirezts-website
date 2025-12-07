@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <title>Ramirez Tech Systems</title>
 
-    <!-- Redirect after 10 seconds -->
     <script>
         let redirectTimeout;
 
         function startTimer() {
             redirectTimeout = setTimeout(function() {
-                window.location.href = "https://www.linkedin.com/company/ramirezts/"; 
-            }, 10000); 
+                window.location.href = "https://www.linkedin.com/company/ramirezts/";
+            }, 10000);
         }
 
         function cancelRedirect() {
             clearTimeout(redirectTimeout);
             document.getElementById("cancel-message").style.display = "block";
+            document.getElementById("continue-link").style.display = "block";
         }
 
         window.onload = startTimer;
@@ -25,12 +25,28 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            padding: 30px;
+            padding: 40px;
         }
         #cancel-message {
             display: none;
             margin-top: 20px;
             color: green;
+        }
+        #continue-link {
+            display: none;
+            margin-top: 10px;
+        }
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 22px;
+            background-color: #0057b7;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .button:hover {
+            background-color: #003f82;
         }
     </style>
 </head>
@@ -39,14 +55,19 @@
     <h1>Welcome to Ramirez Tech Systems</h1>
     <p>Your browser will redirect to our official LinkedIn page in 10 seconds.</p>
 
-    <p>
-        <a href="#" onclick="cancelRedirect()">Click here to stay on this site</a>
-    </p>
+    <p><a href="#" onclick="cancelRedirect()">Click here to stay on this site</a></p>
 
     <div id="cancel-message">
         Redirect canceled. You will stay on this page.
     </div>
 
+    <p id="continue-link">
+        <a href="https://www.linkedin.com/company/ramirezts/">Continue to LinkedIn</a>
+    </p>
+
+    <a href="contact.html" class="button">Contact Us</a>
+
+    <a href="capability.pdf" class="button" download>Download Capability Statement</a>
+
 </body>
 </html>
-
